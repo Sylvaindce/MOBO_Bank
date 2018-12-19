@@ -1,0 +1,14 @@
+CREATE OR REPLACE PROCEDURE "APPUSER"."ADD_PO_HISTORY"
+( p_po_number         purchase_orders.po_number%type,
+  p_po_description    purchase_orders.po_description%type,
+  p_po_date           purchase_orders.po_date%type,
+  p_po_vendor         purchase_orders.po_vendor%type,
+  p_po_date_received  purchase_orders.po_date_received%type
+)
+IS
+BEGIN
+   INSERT INTO purchase_orders(po_number,po_description,po_date,po_vendor,po_date_received)
+       VALUES(p_po_number,p_po_description,p_po_date,p_po_vendor,p_po_date_received);
+
+END add_po_history;
+/ 
